@@ -58,6 +58,8 @@
         e.preventDefault();
         var $textarea = $('#textarea-chatup');
         console.log("textArea: ", $textarea, $textarea.val());
+        if($textarea.val() == "")
+          return;
         window.chatUp.socket.emit('chatMessage', $textarea.val());
         $('#chatup-messages').append(
           '<div class="chatup-user-msg">' + $textarea.val() + '</div>'
