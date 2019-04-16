@@ -12,6 +12,7 @@
   min-height: 27px;
   max-height: 20vh;
   overflow-y: auto;
+  background-color: white;
 }
 
 #chatup-messages.hidden-msg {
