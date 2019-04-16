@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+      <meta charset="utf-8">
+      <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1" >
+      <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+
+      <title>chatUpExemple</title>
+    </head>
+    <body>
+      <header>
+        <div class="bg-secondary form-horizontal p-3 rounded text-center">
+          CHATUPP
+        </div>
+      </header>
+
+      <main role="main" class="container">
+        <div class="h1">
+          Lorem ipsum dolor sit amet
+        </div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor fermentum leo, non lacinia massa fringilla nec. Nam varius felis sit amet massa imperdiet, vel sagittis risus consequat. Duis non mi vitae lectus aliquam convallis non at justo. Vivamus nunc purus, convallis a mauris vitae, auctor volutpat sapien. Phasellus maximus, velit sed ultrices consequat, velit velit accumsan libero, condimentum auctor lorem velit non erat. Curabitur libero libero, molestie eget nulla id, dapibus rutrum ipsum. Nunc ullamcorper urna sapien, ac ullamcorper metus imperdiet id. Maecenas lobortis pretium erat vel sollicitudin. Vestibulum vel feugiat tellus, a pretium ipsum. Suspendisse vestibulum mattis eros eu tincidunt. Sed sodales mattis urna, vel feugiat massa venenatis ut. Integer ultricies urna ante, at lobortis magna eleifend placerat. Ut convallis diam quis lorem rutrum aliquam. Phasellus a erat sit amet purus feugiat porta.
+          </p>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis eu sagittis ligula. Morbi tristique mi vel purus condimentum, non porta dui bibendum. Ut accumsan, diam id hendrerit porta, mauris metus sollicitudin velit, nec convallis leo sapien sed velit. Praesent et quam egestas, tempus mi ut, tempus urna. Sed eu leo magna. In fringilla nunc magna, et bibendum orci tincidunt et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis erat elit, porta sit amet placerat euismod, pellentesque sit amet nisi. Cras a mi volutpat, porttitor turpis eu, venenatis nulla. Donec suscipit, nunc in placerat sagittis, leo ante accumsan nulla, a pretium purus risus vitae justo. Morbi consequat sollicitudin condimentum.
+          </p>
+        </div>
+      </main>
+      <!--
+        To add on client server
+      -->
+      <div id="chat-up-embed"></div>
+      <!--
+        End to add on client server
+      -->
+      <footer class="footer">
+        <dir class="container">
+          <div class="row">
+            <div class="col-8">
+
+            </div>
+            <dir class="col-4">
+            </dir>
+          </div>
+        </dir>
+      </footer>
+      <!--
+        To add on client server
+      -->
+      <script src="http://pedago01c.univ-avignon.fr:3101/embed"></script>
+      <script>
+        chatUp.init('chat-up-embed');
+      </script>
+      <!--
+        End to add on client server
+      -->
+    </div>
+
+    <style type="text/css">
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        line-height: 60px;
+        background-color: #f5f5f5;
+      }
+      .footer > .container{
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      #chat-up-embed {
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        z-index: 1020;
+      }
+    </style>
+  </body>
+</html>

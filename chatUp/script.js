@@ -19,6 +19,8 @@
       this.conf.elem.html(
         '<div id="chatup-form">'+
           '<div id="chatup-messages">'+
+            '<div class="hide-chatup-msg">-</div>'+
+            '<div class="chatup-recived-msg">' + "Besoin de mon aide?" + '</div>'+
           '</div>'+
           '<form id="form-chatup">'+
             '<input id="textarea-chatup" rows="4" cols="50" type="text" name="comment" placeholder="besoin d\'aide?"></input>'+
@@ -61,6 +63,11 @@
           '<div class="chatup-user-msg">' + $textarea.val() + '</div>'
         );
         $textarea.val('');
+      });
+
+      $('.hide-chatup-msg').on('click', function(e) {
+        $chatup_messages = $('#chatup-messages');
+        $chatup_messages.toggleClass('hidden-msg');
       });
     };
     document.getElementsByTagName("head")[0].appendChild(script);

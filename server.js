@@ -69,6 +69,11 @@ app.get('/', function(req, res) {
 	res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/demo', function(req, res) {
+	console.log('load page /demo');
+	res.sendFile(path.join(__dirname + '/demo/ex.html'));
+});
+
 app.get('/embed', function(req, res) {
 	console.log('embed file');
 	res.sendFile(path.join(__dirname + '/chatUp/script.js'));

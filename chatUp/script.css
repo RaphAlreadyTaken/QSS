@@ -1,0 +1,61 @@
+#chatup-form {
+  max-width: 273px;
+}
+
+#chatup-messages {
+  padding-top: 15px !important;
+  padding: 5px;
+  border-radius:5px 5px 0px 0px;
+  border-width:2px;
+  border-style:solid;
+  border-color:#6c757d;
+  min-height: 27px;
+  max-height: 20vh;
+  overflow-y: auto;
+}
+
+#chatup-messages.hidden-msg {
+
+}
+
+.hide-chatup-msg{
+  position: absolute;
+  top: -1px;
+  right: 20PX;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.chatup-user-msg{
+  border-radius:25PX 25PX 0px 25PX;
+  border-width:2px;
+  border-style:solid;
+  border-color:#6c757d;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /*text-align: right;*/
+  word-wrap: break-word;
+  padding: 6px;
+  margin: 5px;
+}
+
+#chatup-messages.hidden-msg .chatup-user-msg {
+  display: none;
+}
+
+.chatup-recived-msg{
+  border-radius:25PX 25PX 25PX 0px;
+  border-width:2px;
+  border-style:solid;
+  border-color:#6c757d;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  word-wrap: break-word;
+  padding: 6px;
+  margin: 5px;
+}
+
+#chatup-messages.hidden-msg .chatup-recived-msg {
+  display: none;
+}
