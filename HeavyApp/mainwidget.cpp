@@ -24,9 +24,6 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
     sock.open(url);
 
     ui->setupUi(this);
-
-//    ui->convListLayout->layout()->addWidget(new ConvTab(this, "Correspondant 2", true));
-//    ui->convListLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
 }
 
 MainWidget::~MainWidget()
@@ -73,7 +70,7 @@ void MainWidget::onMessageReceived(QString message)
     QString mess = jsonMsg["message"].toString();
 
     ConvTab *un = new ConvTab(this, sender);
-    ui->convListLayout->layout()->addWidget(un);
+    ui->convListLayout->widget()->layout()->addWidget(un);
     un->setIsCurrentTab(true);
     ui->msgDisplayLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
