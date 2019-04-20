@@ -1,0 +1,12 @@
+release/main.o
+release/mainwindow.o
+release/mainwidget.o
+release/sendermsg.o
+release/receivermsg.o
+release/convtab.o
+release/qrc_ressources_file.o
+release/moc_mainwindow.o
+release/moc_mainwidget.o
+release/moc_sendermsg.o
+release/moc_receivermsg.o
+release/moc_convtab.o

@@ -1,0 +1,12 @@
+debug/main.o
+debug/mainwindow.o
+debug/mainwidget.o
+debug/sendermsg.o
+debug/receivermsg.o
+debug/convtab.o
+debug/qrc_ressources_file.o
+debug/moc_mainwindow.o
+debug/moc_mainwidget.o
+debug/moc_sendermsg.o
+debug/moc_receivermsg.o
+debug/moc_convtab.o

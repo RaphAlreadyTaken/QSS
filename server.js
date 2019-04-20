@@ -39,26 +39,40 @@ app.use(bodyParser.json());
 /******** Configuration du serveur NodeJS - Port : 3101
 *
 ********/
-var server=app.listen(3101, function() {
+var server = app.listen(3101, function() {
 	console.log('listening on 3101');
 });
 
 /*******
 *	Configuration du webSocket
 *******/
-var io = require('socket.io').listen(server); // définit le middleware socket.io et le serveur avec lequel la connexion full-duplex doit être établie
+// var io = require('socket.io').listen(server); // définit le middleware socket.io et le serveur avec lequel la connexion full-duplex doit être établie
 
-io.on('connection', function (socket) { // ouverture de la connexion full-duplex disponible dans le paramètre socket
-	console.log('connexion socket.oi');
+// io.on('connection', function (socket) { // ouverture de la connexion full-duplex disponible dans le paramètre socket
+// 	console.log('connexion socket.io');
 
-	socket.on("notification client", function (data) {
-		console.log(data);
-	});
+// 	socket.on("notification client", function (data) {
+// 		console.log(data);
+// 	});
 
-	socket.on("chatMessage", function(message)
+// 	socket.on("chatMessage", function(message)
+// 	{
+// 		console.log('Message reçu : ' + message);
+// 		socket.broadcast.emit("Message: " + message);
+// 	})
+// });
+
+const sock = require('ws').Server;
+const ws = new sock({server});
+
+ws.on('connection', ws =>
+{
+	ws.send("New client");
+
+	ws.on('message', message =>
 	{
-		console.log('Message reçu : ' + message);
-	})
+		console.log("Message received: " + message);
+	});
 });
 
 /******** Gestion des URI
@@ -66,7 +80,7 @@ io.on('connection', function (socket) { // ouverture de la connexion full-duplex
 ********/
 app.get('/', function(req, res) {
 	console.log('load page /');
-	res.sendFile(path.join(__dirname + '/index.html'));
+	res.send('Connected');
 });
 
 app.get('/demo', function(req, res) {

@@ -1,10 +1,12 @@
 #include "mainwindow.h"
 #include <QApplication>
+#include <QUrl>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
+    QUrl url("ws://localhost:3101/chat");
+    MainWindow w(url);
     w.setWindowTitle("ChatUp");
     w.show();
 

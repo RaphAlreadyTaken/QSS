@@ -12,7 +12,7 @@ class SenderMsg : public QWidget
     Q_OBJECT
 
 public:
-    explicit SenderMsg(QWidget *parent = nullptr);
+    explicit SenderMsg(QString message, QWidget *parent = nullptr);
     ~SenderMsg();
 
 private:

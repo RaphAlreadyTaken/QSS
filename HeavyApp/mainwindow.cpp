@@ -3,14 +3,16 @@
 #include "mainwidget.h"
 
 #include <QLayout>
+#include <QUrl>
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QUrl url, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     this->ui->centralWidget->setLayout(new QVBoxLayout);
-    ui->centralWidget->layout()->addWidget(new MainWidget());
+    QWidget * widg = new MainWidget(url);
+    ui->centralWidget->layout()->addWidget(widg);
 }
 
 MainWindow::~MainWindow()

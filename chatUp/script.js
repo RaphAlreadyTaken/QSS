@@ -1,7 +1,7 @@
 (function(){
 
   var link = document.createElement("link");
-  link.href = 'http://pedago01c.univ-avignon.fr:3101/embedCss';
+  link.href = 'http://localhost:3101/embedCss';
   link.rel = 'stylesheet';
   link.type = 'text/css';
   document.getElementsByTagName("head")[0].appendChild(link);
@@ -38,12 +38,7 @@
   }
 
   if(typeof window.io !== 'function') {
-    var script = document.createElement("SCRIPT");
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js';
-    script.type = 'text/javascript';
-    script.onload = function() {
-      window.chatUp.socket = io.connect('http://pedago01c.univ-avignon.fr:3101');
-    };
+    window.chatUp.socket = new WebSocket("ws://localhost:3101/chat");
     document.getElementsByTagName("head")[0].appendChild(script);
   }
 
@@ -60,7 +55,7 @@
         console.log("textArea: ", $textarea, $textarea.val());
         if($textarea.val() == "")
           return;
-        window.chatUp.socket.emit('chatMessage', $textarea.val());
+        window.chatUp.socket.send($textarea.val());
         $('#chatup-messages').append(
           '<div class="chatup-user-msg">' + $textarea.val() + '</div>'
         );

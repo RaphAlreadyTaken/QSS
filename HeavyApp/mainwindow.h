@@ -12,7 +12,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QUrl url, QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
