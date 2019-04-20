@@ -20,7 +20,7 @@
         '<div id="chatup-form">'+
           '<div id="chatup-messages">'+
             '<div class="hide-chatup-msg">-</div>'+
-            '<div class="chatup-recived-msg">' + "Besoin de mon aide?" + '</div>'+
+            '<div class="chatup-received-msg">' + "Besoin de mon aide?" + '</div>'+
           '</div>'+
           '<form id="form-chatup">'+
             '<input id="textarea-chatup" rows="4" cols="50" type="text" name="comment" placeholder="besoin d\'aide?"></input>'+
@@ -55,6 +55,15 @@
       $(window.chatUp).ready(function(e)
       {
         window.chatUp.socket.send(JSON.stringify({'id': window.chatUp.userId}));
+      });
+
+      $(window.chatUp.socket).on('message', function(e)
+      {
+        msg = JSON.parse(e.originalEvent.data);
+        console.log("Message received: " + msg.message);
+        $('#chatup-messages').append(
+          '<div class="chatup-received-msg">' + msg.message + '</div>'
+        );
       });
 
       $('#form-chatup').on('submit', function(e) {

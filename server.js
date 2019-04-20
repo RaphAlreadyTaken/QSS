@@ -134,7 +134,7 @@ ws.on('connection', wsock =>
 
 			//Send message to designated web client
 			target = clientsHlp[msg.idHlp].target;
-			clients[target].helper = msg.idHlp;	//Give client a helper
+			clients[target].helper = msg.idHlp;		//Give client a helper
 			clients[target].send(message);
 			console.log("Message transferred to " + target);
 		}

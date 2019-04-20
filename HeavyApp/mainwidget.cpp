@@ -22,18 +22,11 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
 //    connect(&sock, &QWebSocket::disconnected, this, &MainWidget::disconnectWS);
 
     sock.open(url);
-    qDebug() << sock.isValid() << endl;
 
     ui->setupUi(this);
 
-    ui->msgDisplayLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
-
-    ConvTab *un = new ConvTab(this, "Correspondant 1");
-    ui->convListLayout->layout()->addWidget(un);
-    un->setIsCurrentTab(true);
-
-    ui->convListLayout->layout()->addWidget(new ConvTab(this, "Correspondant 2", true));
-    ui->convListLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
+//    ui->convListLayout->layout()->addWidget(new ConvTab(this, "Correspondant 2", true));
+//    ui->convListLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
 }
 
 MainWidget::~MainWidget()
@@ -78,6 +71,11 @@ void MainWidget::onMessageReceived(QString message)
     QJsonObject jsonMsg = QJsonDocument::fromJson(message.toUtf8()).object();
     QString sender = jsonMsg["id"].toString();
     QString mess = jsonMsg["message"].toString();
+
+    ConvTab *un = new ConvTab(this, sender);
+    ui->convListLayout->layout()->addWidget(un);
+    un->setIsCurrentTab(true);
+    ui->msgDisplayLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
     ui->msgDisplayLayout->layout()->addWidget(new ReceiverMsg(sender.mid(0, sender.indexOf("_")), mess));
     qDebug() << "Message from " << sender << ": " << mess << endl;
