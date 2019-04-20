@@ -76,6 +76,7 @@ ws.on('connection', wsock =>
 
 	wsock.on('message', message =>
 	{
+		console.log("%o", message);
 		msg = JSON.parse(message);
 
 		if (msg.message != null && msg.message.length > 0)
@@ -110,14 +111,17 @@ ws.on('connection', wsock =>
 						return;
 					}
 				}
+
+				msg.message = "No helper available. Please try again in a few minutes.";
+				wsock.send(JSON.stringify(msg));
 			}
 			else	//Helper already associated with client
 			{
+				console.log("helper present");
 				clientsHlp[helper].send(message);
 				return;
 			}
 
-			wsock.send("No helper available. Please try again in a few minutes.");
 		}
 
 		//Helper client
