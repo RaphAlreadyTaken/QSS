@@ -117,7 +117,6 @@ ws.on('connection', wsock =>
 			}
 			else	//Helper already associated with client
 			{
-				console.log("helper present");
 				clientsHlp[helper].send(message);
 				return;
 			}
