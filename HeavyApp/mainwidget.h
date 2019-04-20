@@ -26,6 +26,7 @@ private slots:
 private:
     Ui::MainWidget *ui;
     QWebSocket sock;
+    QString idHlp;
 };
 
 #endif // MAINWIDGET_H

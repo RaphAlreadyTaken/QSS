@@ -244,34 +244,6 @@ debug/moc_mainwindow.cpp: ../HeavyApp/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qicon.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.12.3/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.3\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Raph/Desktop/QSS/build-HeavyApp-Desktop_Qt_5_12_3_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/5.12.3/mingw73_64/mkspecs/win32-g++ -IC:/Users/Raph/Desktop/QSS/HeavyApp -IC:/Qt/5.12.3/mingw73_64/include -IC:/Qt/5.12.3/mingw73_64/include/QtWidgets -IC:/Qt/5.12.3/mingw73_64/include/QtGui -IC:/Qt/5.12.3/mingw73_64/include/QtANGLE -IC:/Qt/5.12.3/mingw73_64/include/QtWebSockets -IC:/Qt/5.12.3/mingw73_64/include/QtNetwork -IC:/Qt/5.12.3/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\HeavyApp\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -380,6 +352,34 @@ debug/moc_mainwidget.cpp: ../HeavyApp/mainwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		debug/moc_predefs.h \
 		C:/Qt/5.12.3/mingw73_64/bin/moc.exe
 	C:\Qt\5.12.3\mingw73_64\bin\moc.exe $(DEFINES) --include C:/Users/Raph/Desktop/QSS/build-HeavyApp-Desktop_Qt_5_12_3_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/5.12.3/mingw73_64/mkspecs/win32-g++ -IC:/Users/Raph/Desktop/QSS/HeavyApp -IC:/Qt/5.12.3/mingw73_64/include -IC:/Qt/5.12.3/mingw73_64/include/QtWidgets -IC:/Qt/5.12.3/mingw73_64/include/QtGui -IC:/Qt/5.12.3/mingw73_64/include/QtANGLE -IC:/Qt/5.12.3/mingw73_64/include/QtWebSockets -IC:/Qt/5.12.3/mingw73_64/include/QtNetwork -IC:/Qt/5.12.3/mingw73_64/include/QtCore -I. -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Tools/mingw730_64/x86_64-w64-mingw32/include ..\HeavyApp\mainwidget.h -o debug\moc_mainwidget.cpp
@@ -854,41 +854,14 @@ debug/main.o: ../HeavyApp/main.cpp ../HeavyApp/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qicon.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qeventloop.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qguiapplication.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtGui/qinputmethod.h
+		C:/Qt/5.12.3/mingw73_64/include/QtGui/qinputmethod.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\HeavyApp\main.cpp
 
 debug/mainwindow.o: ../HeavyApp/mainwindow.cpp ../HeavyApp/mainwindow.h \
@@ -998,35 +971,8 @@ debug/mainwindow.o: ../HeavyApp/mainwindow.cpp ../HeavyApp/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtouchdevice.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qicon.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		../HeavyApp/ui_mainwindow.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -1045,6 +991,33 @@ debug/mainwindow.o: ../HeavyApp/mainwindow.cpp ../HeavyApp/mainwindow.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qtoolbar.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QWidget \
 		../HeavyApp/mainwidget.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QLayout \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qlayout.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qlayoutitem.h \
@@ -1156,11 +1129,38 @@ debug/mainwidget.o: ../HeavyApp/mainwidget.cpp ../HeavyApp/mainwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qfiledevice.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtGui/qtouchdevice.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/QWebSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QUrl \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QAbstractSocket \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkrequest.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QSharedDataPointer \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QNetworkProxy \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qnetworkproxy.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qhostaddress.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslError \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcryptographichash.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/qdatetime.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qssl.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QFlags \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsockets_global.h \
+		C:/Qt/5.12.3/mingw73_64/include/QtWebSockets/qwebsocketprotocol.h \
 		../HeavyApp/sendermsg.h \
 		../HeavyApp/receivermsg.h \
 		../HeavyApp/convtab.h \
 		../HeavyApp/ui_mainwidget.h \
-		C:/Qt/5.12.3/mingw73_64/include/QtCore/QVariant \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -1195,7 +1195,8 @@ debug/mainwidget.o: ../HeavyApp/mainwidget.cpp ../HeavyApp/mainwidget.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QScrollArea \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/qscrollarea.h \
 		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QSpacerItem
+		C:/Qt/5.12.3/mingw73_64/include/QtWidgets/QSpacerItem \
+		C:/Qt/5.12.3/mingw73_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwidget.o ..\HeavyApp\mainwidget.cpp
 
 debug/sendermsg.o: ../HeavyApp/sendermsg.cpp ../HeavyApp/sendermsg.h \

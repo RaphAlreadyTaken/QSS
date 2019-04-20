@@ -46,6 +46,8 @@ var server = app.listen(3101, function() {
 /*******
 *	Configuration du webSocket
 *******/
+
+	/// Former version ///
 // var io = require('socket.io').listen(server); // définit le middleware socket.io et le serveur avec lequel la connexion full-duplex doit être établie
 
 // io.on('connection', function (socket) { // ouverture de la connexion full-duplex disponible dans le paramètre socket
@@ -65,13 +67,83 @@ var server = app.listen(3101, function() {
 const sock = require('ws').Server;
 const ws = new sock({server});
 
-ws.on('connection', ws =>
-{
-	ws.send("New client");
+clients = {};		//Web clients
+clientsHlp = {};	//Helper clients (app)
 
-	ws.on('message', message =>
+ws.on('connection', wsock =>
+{
+	console.log("Client connected");
+
+	wsock.on('message', message =>
 	{
-		console.log("Message received: " + message);
+		msg = JSON.parse(message);
+
+		if (msg.message != null && msg.message.length > 0)
+		{
+			console.log("Message received: " + msg.message);
+		}
+
+		//Web client
+		if (msg.id != null && msg.id.length > 0)
+		{
+			//New web client
+			if (!(msg.id in clients))
+			{
+				clients[msg.id] = wsock;
+				clients[msg.id].helper = null;
+				console.log("Adding new web client (" + Object.keys(clients).length + " total)");
+				return;
+			}
+
+			//Send message to first available helper client
+			helper = clients[msg.id].helper;
+
+			if (helper == null)	//No helper associated with client
+			{
+				for (var key in clientsHlp)
+				{
+					if (clientsHlp[key].target == null)
+					{
+						clientsHlp[key].target = msg.id;	//Give helper a client
+						clientsHlp[key].send(message);
+						console.log("Message transferred to " + key);
+						return;
+					}
+				}
+			}
+			else	//Helper already associated with client
+			{
+				clientsHlp[helper].send(message);
+				return;
+			}
+
+			wsock.send("No helper available. Please try again in a few minutes.");
+		}
+
+		//Helper client
+		else if (msg.idHlp != null && msg.idHlp.length > 0)
+		{
+			//New helper client
+			if (!(msg.idHlp in clientsHlp))
+			{
+				clientsHlp[msg.idHlp] = wsock;
+				clientsHlp[msg.idHlp].target = null;
+				console.log("Adding new helper client (" + Object.keys(clientsHlp).length + " total)");
+				return;
+			}
+
+			//Send message to designated web client
+			target = clientsHlp[msg.idHlp].target;
+			clients[target].helper = msg.idHlp;	//Give client a helper
+			clients[target].send(message);
+			console.log("Message transferred to " + target);
+		}
+
+		//Who this
+		else
+		{
+			return;
+		}
 	});
 });
 

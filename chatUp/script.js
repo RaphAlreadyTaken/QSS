@@ -40,6 +40,8 @@
   if(typeof window.io !== 'function') {
     window.chatUp.socket = new WebSocket("ws://localhost:3101/chat");
     document.getElementsByTagName("head")[0].appendChild(script);
+    window.chatUp.userId = 'Toto'; //TODO: modifier ça en formulaire de saisie de nom
+    window.chatUp.userId += '_' + Math.random().toString(36).substr(2, 5);  //Taken from https://gist.github.com/gordonbrander/2230317
   }
 
   //load jquery
@@ -49,13 +51,19 @@
     script.type = 'text/javascript';
     script.onload = function() {
       window.chatUp.load();
+
+      $(window.chatUp).ready(function(e)
+      {
+        window.chatUp.socket.send(JSON.stringify({'id': window.chatUp.userId}));
+      });
+
       $('#form-chatup').on('submit', function(e) {
         e.preventDefault();
         var $textarea = $('#textarea-chatup');
         console.log("textArea: ", $textarea, $textarea.val());
         if($textarea.val() == "")
           return;
-        window.chatUp.socket.send($textarea.val());
+        window.chatUp.socket.send(JSON.stringify({'message': $textarea.val(), 'id': window.chatUp.userId}));
         $('#chatup-messages').append(
           '<div class="chatup-user-msg">' + $textarea.val() + '</div>'
         );

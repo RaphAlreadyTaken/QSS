@@ -2,16 +2,20 @@
 #include "sendermsg.h"
 #include "receivermsg.h"
 #include "convtab.h"
-
 #include "ui_mainwidget.h"
-#include <QSpacerItem>
+
 #include <QDebug>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QSpacerItem>
 #include <QUrl>
 
 MainWidget::MainWidget(QUrl url, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget)
 {
+    idHlp = "Bob Kelso"; //TODO : modifier ça en formulaire de saisie de nom
+
     connect(&sock, &QWebSocket::connected, this, &MainWidget::connectWS);
     connect(&sock, &QWebSocket::textMessageReceived, this, &MainWidget::onMessageReceived);
     connect(&sock, QOverload<QAbstractSocket::SocketError>::of(&QWebSocket::error), this, &MainWidget::onError);
@@ -40,19 +44,28 @@ MainWidget::~MainWidget()
 void MainWidget::on_sendButton_clicked()
 {
     QString message = ui->textSendingArea->toPlainText();
+    ui->textSendingArea->clear();
 
     if (message.length() > 0)
     {
         ui->msgDisplayLayout->layout()->addWidget(new SenderMsg(message));
-        sock.sendTextMessage(message);
-        qDebug() << "Message sent: " << message;
+
+        QJsonObject jsonMsg;
+        jsonMsg.insert("message", message);
+        jsonMsg.insert("idHlp", idHlp);
+
+        sock.sendTextMessage(QJsonDocument(jsonMsg).toJson());
+        qDebug() << "Message to " << idHlp << ": " << message;
     }
 }
 
 void MainWidget::connectWS()
 {
     qDebug() << "Socket connected" << endl;
-    QString msg;
+
+    QJsonObject jsonMsg;
+    jsonMsg.insert("idHlp", idHlp);
+    sock.sendTextMessage(QJsonDocument(jsonMsg).toJson());
 }
 
 void MainWidget::disconnectWS()
@@ -62,8 +75,12 @@ void MainWidget::disconnectWS()
 
 void MainWidget::onMessageReceived(QString message)
 {
-    ui->msgDisplayLayout->layout()->addWidget(new ReceiverMsg(message));
-    qDebug() << "Message received: " << message << endl;
+    QJsonObject jsonMsg = QJsonDocument::fromJson(message.toUtf8()).object();
+    QString sender = jsonMsg["id"].toString();
+    QString mess = jsonMsg["message"].toString();
+
+    ui->msgDisplayLayout->layout()->addWidget(new ReceiverMsg(sender.mid(0, sender.indexOf("_")), mess));
+    qDebug() << "Message from " << sender << ": " << mess << endl;
 }
 
 void MainWidget::onError()

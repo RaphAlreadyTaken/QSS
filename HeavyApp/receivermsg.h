@@ -12,7 +12,7 @@ class ReceiverMsg : public QWidget
     Q_OBJECT
 
 public:
-    explicit ReceiverMsg(QString message, QWidget *parent = nullptr);
+    explicit ReceiverMsg(QString sender, QString message, QWidget *parent = nullptr);
     ~ReceiverMsg();
 
 private:

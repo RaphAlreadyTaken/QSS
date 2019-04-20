@@ -1,7 +1,7 @@
 #include "receivermsg.h"
 #include "ui_receivermsg.h"
 
-ReceiverMsg::ReceiverMsg(QString message, QWidget *parent) :
+ReceiverMsg::ReceiverMsg(QString sender, QString message, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ReceiverMsg)
 {
@@ -9,6 +9,7 @@ ReceiverMsg::ReceiverMsg(QString message, QWidget *parent) :
     ui->sentText->setAlignment(Qt::AlignLeft);
     ui->nameText->setAlignment(Qt::AlignLeft);
     ui->nameText->setStyleSheet("font-weight: bold");
+    ui->nameText->setText(sender);
     ui->frame->setStyleSheet(".QFrame { background-color : lightgrey} ");
 
     ui->sentText->setText(message);
