@@ -16,7 +16,7 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    idHlp = "Bob Kelso"; //TODO : modifier ça en formulaire de saisie de nom
+    idHlp = "Default";
 
     connect(&sock, &QWebSocket::connected, this, &MainWidget::connectWS);
     connect(&sock, &QWebSocket::textMessageReceived, this, &MainWidget::onMessageReceived);
@@ -107,3 +107,9 @@ void MainWidget::disconnectWS()
 {
     qDebug() << "Socket disconnected" << endl;
 }
+
+void MainWidget::setIdHlp(QString argName)
+{
+   idHlp = argName;
+}
+

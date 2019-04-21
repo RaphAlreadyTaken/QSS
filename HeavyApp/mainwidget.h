@@ -15,6 +15,7 @@ class MainWidget : public QWidget
 public:
     explicit MainWidget(QUrl url, QWidget *parent = nullptr);
     ~MainWidget();
+    void setIdHlp(QString argName);
 
 private slots:
     void connectWS();
