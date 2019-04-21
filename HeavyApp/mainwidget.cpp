@@ -10,6 +10,11 @@
 #include <QSpacerItem>
 #include <QUrl>
 
+/**
+ * @brief Constructeur
+ * @param url : Url du websocket
+ * @param parent : élément parent
+ */
 MainWidget::MainWidget(QUrl url, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget)
@@ -25,32 +30,19 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
 
     sock.open(url);
 //    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
-
 }
 
+/**
+ * @brief Destructeur
+ */
 MainWidget::~MainWidget()
 {
     delete ui;
 }
 
+/**
+ * @brief Gestion d'événement de clic sur le bouton d'envoi de message
+ */
 void MainWidget::on_sendButton_clicked()
 {
     QString message = ui->textSendingArea->toPlainText();
@@ -69,6 +61,9 @@ void MainWidget::on_sendButton_clicked()
     }
 }
 
+/**
+ * @brief Gestion de la connexion au websocket
+ */
 void MainWidget::connectWS()
 {
     qDebug() << "Socket connected" << endl;
@@ -78,7 +73,10 @@ void MainWidget::connectWS()
     sock.sendTextMessage(QJsonDocument(jsonMsg).toJson());
 }
 
-
+/**
+ * @brief Gestion de la réception d'un message
+ * @param message : message reçu
+ */
 void MainWidget::onMessageReceived(QString message)
 {
     QJsonObject jsonMsg = QJsonDocument::fromJson(message.toUtf8()).object();
@@ -98,16 +96,26 @@ void MainWidget::onMessageReceived(QString message)
     qDebug() << "Message from " << sender << ": " << mess << endl;
 }
 
+/**
+ * @brief Gestion des erreurs liées au websocket
+ */
 void MainWidget::onError()
 {
     qDebug() << sock.errorString() << endl;
 }
 
+/**
+ * @brief Gestion de la déconnexion du websocket
+ */
 void MainWidget::disconnectWS()
 {
     qDebug() << "Socket disconnected" << endl;
 }
 
+/**
+ * @brief Enregistrement de l'ID du client
+ * @param argName : ID du client
+ */
 void MainWidget::setIdHlp(QString argName)
 {
    idHlp = argName;
