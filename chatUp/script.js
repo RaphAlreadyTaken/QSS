@@ -5,7 +5,6 @@
    */
   var link = document.createElement("link");
   link.href = 'http://localhost:3101/embedCss';
-  // link.href = 'http://pedago01c.univ-avignon.fr:3101/embedCss';
   link.rel = 'stylesheet';
   link.type = 'text/css';
   document.getElementsByTagName("head")[0].appendChild(link);
@@ -140,10 +139,7 @@
    */
   if(typeof window.io !== 'function') {
     window.ChatUp.socket = new WebSocket("ws://localhost:3101/chat");
-    // window.ChatUp.socket = new WebSocket("ws://pedago01c.univ-avignon.fr:3101/chat");
     document.getElementsByTagName("head")[0].appendChild(script);
-    window.ChatUp.userId = 'Toto'; //TODO: modifier ça en formulaire de saisie de nom
-    window.ChatUp.userId += '_' + Math.random().toString(36).substr(2, 5);  //Taken from https://gist.github.com/gordonbrander/2230317
   }
 
   //load jquery
