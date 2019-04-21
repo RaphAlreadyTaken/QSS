@@ -5,6 +5,11 @@
 #include <QLayout>
 #include <QUrl>
 
+/**
+ * @brief Constructeur
+ * @param url : Url du websocket
+ * @param parent : Elément parent
+ */
 MainWindow::MainWindow(QUrl url, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -19,11 +24,17 @@ MainWindow::MainWindow(QUrl url, QWidget *parent) :
 //    ui->centralWidget->layout()->addWidget(widg);
 }
 
+/**
+ * @brief Destructeur
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
+/**
+ * @brief Gestion de la validation du formulaire de saisie d'ID
+ */
 void MainWindow::onFormValidated()
 {
     MainWidget * widg = new MainWidget(_url);

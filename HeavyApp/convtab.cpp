@@ -1,6 +1,12 @@
 #include "convtab.h"
 #include "ui_convtab.h"
 
+/**
+ * @brief Constructeur
+ * @param parent : Elément parent
+ * @param name : Nom de l'interlocuteur
+ * @param newMsg : Indicateur de nouveau message non lu
+ */
 ConvTab::ConvTab(QWidget *parent, QString name, bool newMsg) :
     QWidget(parent),
     ui(new Ui::ConvTab)

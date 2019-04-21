@@ -1,6 +1,11 @@
 #include "sendermsg.h"
 #include "ui_sendermsg.h"
 
+/**
+ * @brief Constructeur
+ * @param message : Message envoyé
+ * @param parent : Elément parent
+ */
 SenderMsg::SenderMsg(QString message, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SenderMsg)
@@ -15,6 +20,9 @@ SenderMsg::SenderMsg(QString message, QWidget *parent) :
 
 }
 
+/**
+ * @brief Destructeur
+ */
 SenderMsg::~SenderMsg()
 {
     delete ui;
