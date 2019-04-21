@@ -2,12 +2,8 @@
 * Chargement des Middleware
 **/
 const express = require('express'); //Express.js
-const pgClient = require('pg');		//BD PGSQL
-const sha1 = require('sha1');	//Crytage des mdp
 const session = require('express-session');	//Gestion des sessions
 const MongoDBStore = require('connect-mongodb-session')(session);	//MongoDB for session
-const MongoClient = require('mongodb').MongoClient; //MongoDB for other
-const mongodb = require('mongodb');
 const path = require('path');
 const bodyParser = require('body-parser');
 
