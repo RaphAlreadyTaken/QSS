@@ -14,6 +14,8 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MainWidget)
 {
+    ui->setupUi(this);
+
     idHlp = "Bob Kelso"; //TODO : modifier ça en formulaire de saisie de nom
 
     connect(&sock, &QWebSocket::connected, this, &MainWidget::connectWS);
@@ -22,8 +24,26 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
 //    connect(&sock, &QWebSocket::disconnected, this, &MainWidget::disconnectWS);
 
     sock.open(url);
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
+//    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
 
-    ui->setupUi(this);
 }
 
 MainWidget::~MainWidget()

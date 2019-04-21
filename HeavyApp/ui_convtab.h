@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'convtab.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.3
+** Created by: Qt User Interface Compiler version 5.12.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -31,13 +31,14 @@ public:
     {
         if (ConvTab->objectName().isEmpty())
             ConvTab->setObjectName(QString::fromUtf8("ConvTab"));
-        ConvTab->resize(302, 60);
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        ConvTab->resize(200, 60);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(ConvTab->sizePolicy().hasHeightForWidth());
         ConvTab->setSizePolicy(sizePolicy);
-        ConvTab->setMaximumSize(QSize(16777215, 70));
+        ConvTab->setMinimumSize(QSize(200, 60));
+        ConvTab->setMaximumSize(QSize(200, 60));
         horizontalLayout = new QHBoxLayout(ConvTab);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         frame = new QFrame(ConvTab);
@@ -58,8 +59,11 @@ public:
 
         newMsgLabel = new QLabel(frame);
         newMsgLabel->setObjectName(QString::fromUtf8("newMsgLabel"));
-        sizePolicy.setHeightForWidth(newMsgLabel->sizePolicy().hasHeightForWidth());
-        newMsgLabel->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(newMsgLabel->sizePolicy().hasHeightForWidth());
+        newMsgLabel->setSizePolicy(sizePolicy2);
         newMsgLabel->setMaximumSize(QSize(16, 16));
         newMsgLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/red_dot.png")));
         newMsgLabel->setScaledContents(true);

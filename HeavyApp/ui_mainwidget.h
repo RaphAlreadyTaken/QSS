@@ -16,7 +16,6 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -32,7 +31,6 @@ public:
     QScrollArea *convListLayout;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_4;
-    QSpacerItem *verticalSpacer;
     QScrollArea *msgDisplayingArea;
     QWidget *msgDisplayLayout;
     QVBoxLayout *verticalLayout_3;
@@ -48,37 +46,36 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         frame = new QFrame(MainWidget);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setMaximumSize(QSize(250, 16777215));
+        frame->setMaximumSize(QSize(265, 16777215));
         frame->setFrameShape(QFrame::Box);
         frame->setFrameShadow(QFrame::Sunken);
         verticalLayout_2 = new QVBoxLayout(frame);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
         convListLayout = new QScrollArea(frame);
         convListLayout->setObjectName(QString::fromUtf8("convListLayout"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(convListLayout->sizePolicy().hasHeightForWidth());
         convListLayout->setSizePolicy(sizePolicy);
         convListLayout->setFrameShape(QFrame::NoFrame);
         convListLayout->setWidgetResizable(true);
+        convListLayout->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 226, 68));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 241, 728));
         verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setSizeConstraint(QLayout::SetFixedSize);
         convListLayout->setWidget(scrollAreaWidgetContents);
 
         verticalLayout->addWidget(convListLayout);
 
 
         verticalLayout_2->addLayout(verticalLayout);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_2->addItem(verticalSpacer);
 
 
         gridLayout_2->addWidget(frame, 0, 0, 2, 1);
@@ -88,7 +85,7 @@ public:
         msgDisplayingArea->setWidgetResizable(true);
         msgDisplayLayout = new QWidget();
         msgDisplayLayout->setObjectName(QString::fromUtf8("msgDisplayLayout"));
-        msgDisplayLayout->setGeometry(QRect(0, 0, 1000, 644));
+        msgDisplayLayout->setGeometry(QRect(0, 0, 985, 644));
         verticalLayout_3 = new QVBoxLayout(msgDisplayLayout);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         msgDisplayingArea->setWidget(msgDisplayLayout);
