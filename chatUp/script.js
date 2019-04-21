@@ -11,7 +11,7 @@
   document.getElementsByTagName("head")[0].appendChild(link);
 
   /**
-   * Chergement du websocket
+   * Chargement du websocket
    */
   var script = document.createElement("SCRIPT");
   script.src = 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js';
@@ -56,7 +56,7 @@
     /**
      * Fonction initialisant le module
      * param: elemId: emplacement où sera placé le module, dans la page html
-     * param: color: Couleur personnalisable, de l'outil
+     * param: color: Couleur personnalisable de l'outil
      */
     init: function(elemId, color) {
       console.log("Chat_up initialisation", elemId, color);
@@ -71,7 +71,7 @@
       window.ChatUp.conf = Object.assign(conf, window.ChatUp.conf);
     },
     /**
-     * Fonction Attribuant différens événements aux éléments constituants l'outil de chat
+     * Fonction attribuant différents événements aux éléments constituant l'outil de chat
      */
     event: function() {
       var self = this;
@@ -89,7 +89,7 @@
       });
 
       /**
-       * Evénement d'envoie de message
+       * Evénement d'envoi de message
        */
       $('#form-chatup').on('submit', function(e) {
         e.preventDefault();
@@ -105,7 +105,7 @@
       });
 
       /**
-       * Evénement d'envoie de l'identifiant de l'utilisateur
+       * Evénement d'envoi de l'identifiant de l'utilisateur
        */
       $('#form-chatup-id').on('submit', function(e) {
         e.preventDefault();
@@ -114,7 +114,7 @@
         console.log("pseudo: ", $textArea, $textArea.val());
         if(pseudo == "")
           return;
-        self.userId = pseudo; //TODO: modifier ça en formulaire de saisie de nom
+        self.userId = pseudo;
         self.userId += '_' + Math.random().toString(36).substr(2, 5);  //Taken from https://gist.github.com/gordonbrander/2230317
         self.socket.send(JSON.stringify({'id': window.ChatUp.userId}));
         $('#form-chatup-id').addClass('hide');
@@ -126,7 +126,7 @@
       });
 
       /**
-       * Evéement de click pour cacher le chat
+       * Evénement de click pour cacher le chat
        */
       $('.hide-chatup-msg').on('click', function(e) {
         $chatupMessages = $('#chatup-messages-list');
@@ -153,7 +153,7 @@
     script.type = 'text/javascript';
 
     /**
-     * Fonction de callback, charge le module et cherge ses événements une fois que jQuery est importé
+     * Fonction de callback, charge le module et charge ses événements une fois que jQuery est importé
      */
     script.onload = function() {
       window.ChatUp.load();
