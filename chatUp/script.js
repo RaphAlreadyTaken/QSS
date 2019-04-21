@@ -10,15 +10,6 @@
   document.getElementsByTagName("head")[0].appendChild(link);
 
   /**
-   * Chargement du websocket
-   */
-  var script = document.createElement("SCRIPT");
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js';
-  script.type = 'text/javascript';
-  document.getElementsByTagName("head")[0].appendChild(script);
-
-
-  /**
    * Classe ChatUp: Module de chat
    */
   window.ChatUp = {
@@ -139,7 +130,6 @@
    */
   if(typeof window.io !== 'function') {
     window.ChatUp.socket = new WebSocket("ws://localhost:3101/chat");
-    document.getElementsByTagName("head")[0].appendChild(script);
   }
 
   //load jquery
