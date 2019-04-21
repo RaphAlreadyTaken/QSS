@@ -1,6 +1,6 @@
-/******** Chargement des Middleware
-*
-********/
+/**
+* Chargement des Middleware
+**/
 const express = require('express'); //Express.js
 const pgClient = require('pg');		//BD PGSQL
 const sha1 = require('sha1');	//Crytage des mdp
@@ -11,9 +11,9 @@ const mongodb = require('mongodb');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-/******** Declaration des variables
-*
-********/
+/**
+* Declaration des variables
+**/
 const app = express(); // expressJS
 
 const dsnMongoDB = "mongodb://127.0.0.1:27017/db";
@@ -36,33 +36,16 @@ app.use(session({
 app.use(bodyParser.json());
 
 
-/******** Configuration du serveur NodeJS - Port : 3101
-*
-********/
+/** 
+* Configuration du serveur NodeJS - Port : 3101
+**/
 var server = app.listen(3101, function() {
 	console.log('listening on 3101');
 });
 
-/*******
-*	Configuration du webSocket
-*******/
-
-	/// Former version ///
-// var io = require('socket.io').listen(server); // définit le middleware socket.io et le serveur avec lequel la connexion full-duplex doit être établie
-
-// io.on('connection', function (socket) { // ouverture de la connexion full-duplex disponible dans le paramètre socket
-// 	console.log('connexion socket.io');
-
-// 	socket.on("notification client", function (data) {
-// 		console.log(data);
-// 	});
-
-// 	socket.on("chatMessage", function(message)
-// 	{
-// 		console.log('Message reçu : ' + message);
-// 		socket.broadcast.emit("Message: " + message);
-// 	})
-// });
+/**
+* Configuration du webSocket
+**/
 
 const sock = require('ws').Server;
 const ws = new sock({server});
@@ -150,9 +133,9 @@ ws.on('connection', wsock =>
 	});
 });
 
-/******** Gestion des URI
-*
-********/
+/**
+* Gestion des URI
+**/
 app.get('/', function(req, res) {
 	console.log('load page /');
 	res.send('Connected');
