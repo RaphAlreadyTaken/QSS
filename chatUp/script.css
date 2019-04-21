@@ -4,19 +4,80 @@
 
 #chatup-messages {
   padding-top: 15px !important;
-  padding: 5px;
   border-radius:5px 5px 0px 0px;
   border-width:2px;
+  border-bottom: none !important;
   border-style:solid;
-  border-color:#6c757d;
+  border-color: var(--chatup-color);
   min-height: 27px;
-  max-height: 20vh;
-  overflow-y: auto;
+  max-height: 25vh;
   background-color: white;
 }
 
-#chatup-messages.hidden-msg {
+#textarea-chatup {
+  border-width: 2px;
+  border-style: solid;
+  border-color:  var(--chatup-color);
+  padding-right: 2px;
+}
 
+#textarea-chatup-id {
+  border-width: 2px;
+  border-style: solid;
+  border-color:  var(--chatup-color);
+  padding-right: 2px;
+}
+
+#chatup-send-msg {
+  border-style: solid;
+  border-color:  var(--chatup-color);
+  background-color:  var(--chatup-color);
+  color: white;
+  border-left: none !important;
+}
+
+#chatup-send-msg:hover {
+  background-color: white;
+  color:  var(--chatup-color);
+  border-left: none !important;
+}
+
+#chatup-send-msg-id {
+  border-style: solid;
+  border-color:  var(--chatup-color);
+  background-color:  var(--chatup-color);
+  color: white;
+  border-left: none !important;
+}
+
+
+#chatup-send-msg-id:hover {
+  background-color: white;
+  color:  var(--chatup-color);
+  border-left: none;
+}
+
+#chatup-messages-list.hidden-msg {
+  display: none !important;
+}
+
+#chatup-messages-list {
+  overflow-y: auto;
+  max-height: 22vh;
+  margin-top: 5px;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color:  var(--chatup-color);
+}
+
+.hide {
+  display: none !important;
+}
+
+#chatup-messages #chatup-pseudo {
+  position: absolute;
+  top: 0px;
+  left: 20PX;
 }
 
 .hide-chatup-msg{
@@ -31,10 +92,9 @@
   border-radius:25PX 25PX 0px 25PX;
   border-width:2px;
   border-style:solid;
-  border-color:#6c757d;
+  border-color: var(--chatup-color);
   padding-top: 5px;
   padding-bottom: 5px;
-  /*text-align: right;*/
   word-wrap: break-word;
   padding: 6px;
   margin: 5px;
@@ -48,7 +108,7 @@
   border-radius:25PX 25PX 25PX 0px;
   border-width:2px;
   border-style:solid;
-  border-color:#6c757d;
+  border-color: var(--chatup-color);
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: left;
