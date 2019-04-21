@@ -59,6 +59,7 @@
       }
       document.documentElement.style.setProperty('--chatup-color', conf.color);
       window.ChatUp.conf = Object.assign(conf, window.ChatUp.conf);
+      window.ChatUp.socket = new WebSocket("ws://localhost:3101/chat");
     },
     /**
      * Fonction attribuant différents événements aux éléments constituant l'outil de chat
@@ -123,13 +124,6 @@
         $chatupMessages.toggleClass('hidden-msg');
       });
     }
-  }
-
-  /**
-   * Attribution du websocket
-   */
-  if(typeof window.io !== 'function') {
-    window.ChatUp.socket = new WebSocket("ws://localhost:3101/chat");
   }
 
   //load jquery
