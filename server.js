@@ -76,7 +76,6 @@ ws.on('connection', wsock =>
 
 	wsock.on('message', message =>
 	{
-		console.log("%o", message);
 		msg = JSON.parse(message);
 
 		if (msg.message != null && msg.message.length > 0)
@@ -118,6 +117,7 @@ ws.on('connection', wsock =>
 			else	//Helper already associated with client
 			{
 				clientsHlp[helper].send(message);
+				console.log("Message transferred to " + helper);
 				return;
 			}
 

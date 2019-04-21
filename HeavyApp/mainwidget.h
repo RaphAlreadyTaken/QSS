@@ -27,6 +27,7 @@ private:
     Ui::MainWidget *ui;
     QWebSocket sock;
     QString idHlp;
+    QVector<QString> clients;
 };
 
 #endif // MAINWIDGET_H

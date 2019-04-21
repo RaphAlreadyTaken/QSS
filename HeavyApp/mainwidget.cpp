@@ -21,7 +21,7 @@ MainWidget::MainWidget(QUrl url, QWidget *parent) :
     connect(&sock, &QWebSocket::connected, this, &MainWidget::connectWS);
     connect(&sock, &QWebSocket::textMessageReceived, this, &MainWidget::onMessageReceived);
     connect(&sock, QOverload<QAbstractSocket::SocketError>::of(&QWebSocket::error), this, &MainWidget::onError);
-//    connect(&sock, &QWebSocket::disconnected, this, &MainWidget::disconnectWS);
+    connect(&sock, &QWebSocket::disconnected, this, &MainWidget::disconnectWS);
 
     sock.open(url);
 //    ui->convListLayout->widget()->layout()->addWidget(new ConvTab(this, "Test Correspondant"));
@@ -65,7 +65,7 @@ void MainWidget::on_sendButton_clicked()
         jsonMsg.insert("idHlp", idHlp);
 
         sock.sendTextMessage(QJsonDocument(jsonMsg).toJson());
-        qDebug() << "Message to " << idHlp << ": " << message;
+        qDebug() << "Message sent: " << message;
     }
 }
 
@@ -78,10 +78,6 @@ void MainWidget::connectWS()
     sock.sendTextMessage(QJsonDocument(jsonMsg).toJson());
 }
 
-void MainWidget::disconnectWS()
-{
-    qDebug() << "Socket disconnected" << endl;
-}
 
 void MainWidget::onMessageReceived(QString message)
 {
@@ -89,10 +85,14 @@ void MainWidget::onMessageReceived(QString message)
     QString sender = jsonMsg["id"].toString();
     QString mess = jsonMsg["message"].toString();
 
-    ConvTab *un = new ConvTab(this, sender);
-    ui->convListLayout->widget()->layout()->addWidget(un);
-    un->setIsCurrentTab(true);
-    ui->msgDisplayLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    if (!clients.contains(sender))
+    {
+        clients.push_back(sender);
+        ConvTab *un = new ConvTab(this, sender);
+        ui->convListLayout->widget()->layout()->addWidget(un);
+        un->setIsCurrentTab(true);
+        ui->msgDisplayLayout->layout()->addItem(new QSpacerItem(10, 20, QSizePolicy::Minimum, QSizePolicy::Expanding));
+    }
 
     ui->msgDisplayLayout->layout()->addWidget(new ReceiverMsg(sender.mid(0, sender.indexOf("_")), mess));
     qDebug() << "Message from " << sender << ": " << mess << endl;
@@ -101,4 +101,9 @@ void MainWidget::onMessageReceived(QString message)
 void MainWidget::onError()
 {
     qDebug() << sock.errorString() << endl;
+}
+
+void MainWidget::disconnectWS()
+{
+    qDebug() << "Socket disconnected" << endl;
 }

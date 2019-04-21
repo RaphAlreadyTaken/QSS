@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
@@ -24,14 +25,17 @@ class Ui_MainWidget
 {
 public:
     QGridLayout *gridLayout_2;
-    QScrollArea *convListArea;
-    QWidget *convListLayout;
-    QVBoxLayout *verticalLayout_5;
-    QPlainTextEdit *textSendingArea;
-    QPushButton *sendButton;
+    QFrame *frame;
+    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *verticalLayout;
+    QScrollArea *convListLayout;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout_4;
     QScrollArea *msgDisplayingArea;
     QWidget *msgDisplayLayout;
     QVBoxLayout *verticalLayout_3;
+    QPushButton *sendButton;
+    QPlainTextEdit *textSendingArea;
 
     void setupUi(QWidget *MainWidget)
     {
@@ -40,41 +44,65 @@ public:
         MainWidget->resize(1276, 770);
         gridLayout_2 = new QGridLayout(MainWidget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        convListArea = new QScrollArea(MainWidget);
-        convListArea->setObjectName(QString::fromUtf8("convListArea"));
-        convListArea->setMaximumSize(QSize(250, 16777215));
-        convListArea->setWidgetResizable(true);
-        convListLayout = new QWidget();
+        frame = new QFrame(MainWidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setMaximumSize(QSize(265, 16777215));
+        frame->setFrameShape(QFrame::Box);
+        frame->setFrameShadow(QFrame::Sunken);
+        verticalLayout_2 = new QVBoxLayout(frame);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+        convListLayout = new QScrollArea(frame);
         convListLayout->setObjectName(QString::fromUtf8("convListLayout"));
-        convListLayout->setGeometry(QRect(0, 0, 248, 750));
-        verticalLayout_5 = new QVBoxLayout(convListLayout);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        convListArea->setWidget(convListLayout);
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(convListLayout->sizePolicy().hasHeightForWidth());
+        convListLayout->setSizePolicy(sizePolicy);
+        convListLayout->setFrameShape(QFrame::NoFrame);
+        convListLayout->setWidgetResizable(true);
+        convListLayout->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 241, 728));
+        verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setSizeConstraint(QLayout::SetFixedSize);
+        convListLayout->setWidget(scrollAreaWidgetContents);
 
-        gridLayout_2->addWidget(convListArea, 0, 0, 2, 1);
+        verticalLayout->addWidget(convListLayout);
 
-        textSendingArea = new QPlainTextEdit(MainWidget);
-        textSendingArea->setObjectName(QString::fromUtf8("textSendingArea"));
-        textSendingArea->setMaximumSize(QSize(16777215, 100));
 
-        gridLayout_2->addWidget(textSendingArea, 1, 1, 1, 1);
+        verticalLayout_2->addLayout(verticalLayout);
 
-        sendButton = new QPushButton(MainWidget);
-        sendButton->setObjectName(QString::fromUtf8("sendButton"));
 
-        gridLayout_2->addWidget(sendButton, 1, 2, 1, 1);
+        gridLayout_2->addWidget(frame, 0, 0, 2, 1);
 
         msgDisplayingArea = new QScrollArea(MainWidget);
         msgDisplayingArea->setObjectName(QString::fromUtf8("msgDisplayingArea"));
         msgDisplayingArea->setWidgetResizable(true);
         msgDisplayLayout = new QWidget();
         msgDisplayLayout->setObjectName(QString::fromUtf8("msgDisplayLayout"));
-        msgDisplayLayout->setGeometry(QRect(0, 0, 1000, 644));
+        msgDisplayLayout->setGeometry(QRect(0, 0, 985, 644));
         verticalLayout_3 = new QVBoxLayout(msgDisplayLayout);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         msgDisplayingArea->setWidget(msgDisplayLayout);
 
-        gridLayout_2->addWidget(msgDisplayingArea, 0, 1, 1, 2);
+        gridLayout_2->addWidget(msgDisplayingArea, 0, 1, 1, 3);
+
+        sendButton = new QPushButton(MainWidget);
+        sendButton->setObjectName(QString::fromUtf8("sendButton"));
+        sendButton->setMaximumSize(QSize(75, 16777215));
+
+        gridLayout_2->addWidget(sendButton, 1, 3, 1, 1);
+
+        textSendingArea = new QPlainTextEdit(MainWidget);
+        textSendingArea->setObjectName(QString::fromUtf8("textSendingArea"));
+        textSendingArea->setMaximumSize(QSize(16777215, 100));
+
+        gridLayout_2->addWidget(textSendingArea, 1, 1, 1, 2);
 
 
         retranslateUi(MainWidget);
